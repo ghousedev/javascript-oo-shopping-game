@@ -225,7 +225,7 @@ const getProduct = (prodList, pId) => {
 
 
 // Complete this function
-const calculateBill = (prod, tBill) => { return tBill += prod.price; }
+const calculateBill = (prod, tBill) => { return tBill + prod.price; };
 
 const findPointsToBill = (roundedTotal) => {
     if (roundedTotal > 10 && roundedTotal <= 100) {
