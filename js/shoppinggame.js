@@ -4,35 +4,34 @@ const name = "unknown";
 const score = 0;
 const items = 0;
 // Define the player object here
-let player = { 
+const player = { 
     name: this.name, 
     score: this.score, 
     items: this.items,
-    getCurrentScore: () => player.score,
-    addPoints: (points) => player.score += points,
-    deductPoints: (points) => player.score += points   
+    getCurrentScore: () => this.score,
+    addPoints: (points) => this.score += points,
+    deductPoints: (points) => this.score += points   
 };
 // Define the Product class - write the Constructor function for Product class here
 class Product {
-    id;
-    name;
-    price;
-    expiryDate;
-
+    //id;
+    //name;
+    //price;
+    //expiryDate;
     constructor(id, name, price, expiryDate) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.expiryDate = expiryDate;
     }
-}
+};
 // Complete the dateDiff function
 const dateDiff = (date1, date2) => {
     return Math.floor((date2 - date1) / (24 * 3600 * 1000));
 };
 
 // Here, use Object.defineProperty to create property - daysToExpire
-Object.defineProperty(Product.prototype.expiryDate, 'expiryDate', {
+Object.defineProperty(Product.prototype, 'expiryDate', {
     get() { return dateDiff(this.Product.expiryDate, new Date()) }
 }); 
 
@@ -41,8 +40,8 @@ Object.defineProperty(Product.prototype.expiryDate, 'expiryDate', {
 Product.prototype.getDetails = () => `Product Name: ${this.name} , Product Price: ${this.price}`;
 // Define the MagicProduct class here
 class MagicProduct extends Product {
-    points;
-    isBonus;
+    //points;
+    //isBonus;
     MagicProduct(id, name, price, expiryDate, points, isBonus) {
         Product.call(this, id, name, price, expiryDate);
         this.points = points;
@@ -53,7 +52,7 @@ class MagicProduct extends Product {
 MagicProduct.prototype = Object.create(Product.prototype);
 // Define Rating class here
 class Rating {
-    rate;
+    //rate;
     constructor() {
         this.rate = "";
     }
