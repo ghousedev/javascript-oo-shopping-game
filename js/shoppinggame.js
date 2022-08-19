@@ -295,7 +295,7 @@ function init(data) {
     const shop = (prodList, tBill, lastProd) => {
         let totalBill = tBill;
         const prId = generateProductId();
-        let product = Object.is(undefined, lastProd) ? getProduct(prodList, prId) : lastProd;
+        let product = Object.is(lastProd, undefined) ? getProduct(prodList, prId) : lastProd;
         let productDetails = product.getDetails();
 
         rl.question(`You can buy - ${productDetails}.\n Do you want to buy this item <Y/N>? `.yellow, function (option) {
@@ -318,7 +318,7 @@ function init(data) {
                     if (player.items < 10) {
                         shop(prodList, totalBill);
                     } else {
-                        exitLost();
+                        exitLost(); 
                     }
                 }
 
